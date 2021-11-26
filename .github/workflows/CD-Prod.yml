@@ -17,7 +17,6 @@ jobs:
       - name: Mise à jour des dépendances du front
         run: |
           cd front-react
-          rm yarn.lock
           yarn install
       - name: Build du front
         run: |
@@ -25,7 +24,6 @@ jobs:
           yarn build
       - name: Mise à jour des dépendances du back
         run: |
-          rm yarn.lock
           yarn install
       - name: Build du back
         run: |

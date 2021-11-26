@@ -9,6 +9,7 @@ jobs:
     name: Récupération du code et mise à jour
     runs-on: [self-hosted, linux, x64]
     steps:
+      - uses: actions/checkout@v2
       - name: Mise à jour du submodule
         run: git submodule update --init
       - name: Mise à jour des dépendances du front

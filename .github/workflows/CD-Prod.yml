@@ -5,9 +5,9 @@ on:
     branches: [master]
 
 jobs:
-  pull-from-s3:
+  preparation:
     name: Récupération du code et mise à jour
-    runs-on: [self-hosted, prod]
+    runs-on: [self-hosted, vps648284]
     steps:
       - name: Mise à jour du submodule
         run: git submodule update --init

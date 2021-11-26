@@ -1,0 +1,31 @@
+name: Prod - CD
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  pull-from-s3:
+    name: Récupération du code et mise à jour
+    runs-on: [self-hosted, prod]
+    steps:
+      - name: Mise à jour du submodule
+        run: git submodule update --init
+      - name: Mise à jour des dépendances du front
+        run: |
+          cd front-react
+          rm yarn.lock
+          yarn install
+      - name: Build du front
+        run: |
+          yarn build
+      - name: Mise à jour des dépendances du back
+        run: |
+          cd ..
+          rm yarn.lock
+          yarn install
+      - name: Build du back
+        run: |
+          yarn build
+      - name: Restart du service
+        run: systemctl restart oclock-pong.service

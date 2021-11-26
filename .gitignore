@@ -1,0 +1,26 @@
+# Externals scripts
+/vendor
+
+# Mac Thumbs Files
+.DS_Store
+
+# Dependencies NPM / Yarn
+node_modules
+
+# Editor Configuration
+.vscode
+
+# Logs
+/*.log
+
+# Javascript Compiled.
+/public
+/build
+/dist
+
+.env
+.env.*
+!.env.example
+
+# IDE IntelliJ
+.idea

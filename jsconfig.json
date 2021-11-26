@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "src/*": ["./src"],
+      "tests/*": ["./tests"],
+    }
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^src(.*)$": "<rootDir>/src$1",
+      "^test(.*)$": "<rootDir>/tests$1"
+    }
+  },
+  "exclude": ["node_modules", "dist", "front-react"]
+}

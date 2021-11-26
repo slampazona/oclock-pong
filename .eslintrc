@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "./node_modules/@oclock/config/eslint.js",
+    "./node_modules/@oclock/config-back/eslint.js"
+  ]
+}

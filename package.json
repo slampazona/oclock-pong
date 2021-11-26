@@ -1,0 +1,57 @@
+{
+  "name": "Pong",
+  "version": "1.0.0",
+  "main": "dist/server.js",
+  "repository": "git@github.com:slampazona/oclock-pong.git",
+  "author": "Sébastien Lampazona <sebastien@oclock.io>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env nodemon src/server.js --exec babel-node",
+    "start": "cross-env NODE_ENV=production node dist/server.js",
+    "build": "babel src -d dist --ignore ./src/public --copy-files",
+    "test": "cross-env NODE_PATH=./ mocha --exit --require tests/.setup.js \"tests/{,!(demo)/**}/*.test.js\"",
+    "test:watch": "cross-env NODE_PATH=./ mocha --watch --require tests/.setup.js \"tests/{,!(demo)/**}/*.test.js\"",
+    "lint": "eslint --fix '{src,tests}/**/*.js'",
+    "pretty": "prettier --write '{src,tests}/**/*.js'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && yarn test"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cors": "^2.8.4",
+    "cross-env": "^7.0.3",
+    "dayjs": "^1.9.6",
+    "dotenv-flow": "^3.2.0",
+    "express": "^4.16.3",
+    "mariadb": "^2.5.1",
+    "path": "^0.12.7",
+    "sequelize": "^6.3.5",
+    "swagger-ui-express": "^4.1.6",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/register": "^7.8.3",
+    "@babel/runtime": "^7.8.4",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "nodemon": "^2.0.15"
+  }
+}

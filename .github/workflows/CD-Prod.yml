@@ -25,8 +25,11 @@ jobs:
       - name: Mise à jour des dépendances du back
         run: |
           yarn install
+      - name: Setup back .env.production
+        run: |
+          echo '${{ secrets.PRODUCTION_ENV}}' > .env.production
       - name: Build du back
         run: |
           yarn build
       - name: Restart du service
-        run: systemctl restart oclock-pong.service
+        run: systemctl restart pong_game.service

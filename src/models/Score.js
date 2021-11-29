@@ -27,6 +27,7 @@ import dayjs from 'dayjs';
 *            format: date
 *            description: La date du score ( date du moment si non fournie )
 *        example:
+*           id: 1
 *           player_1: 5
 *           player_2: 10
 *           score_date: 2021-11-29 14:35

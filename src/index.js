@@ -11,6 +11,7 @@ import { developmentErrors, productionErrors } from 'src/middlewares/errorHandle
 import router from 'src/routes';
 // Express
 const app = express();
+app.use(express.json());
 // CORS
 // API : https://github.com/expressjs/cors#configuration-options
 app.use(

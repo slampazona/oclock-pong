@@ -1,6 +1,6 @@
 import winston from 'winston';
 
-const logLevel = 'verbose';
+const logLevel = 'debug';
 const logLevels = {
     levels: {
         error: 0,
@@ -20,12 +20,13 @@ const logLevels = {
     }
 };
 
-winston.addColors(logLevels);
+winston.addColors(logLevels.colors);
 
 const logger = winston.createLogger({
     level: logLevel,
+    levels: logLevels.levels,
     format: winston.format.combine(
-        winston.format.colorize(),
+        winston.format.colorize({ all: true}),
         winston.format.timestamp(),
         winston.format.align(),
         winston.format.printf((info) => {

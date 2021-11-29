@@ -1,0 +1,31 @@
+{
+    "definition": {
+        "openapi": "3.0.0",
+        "info": {
+            "title": "Pong API",
+            "version": "0.1.0",
+            "description": "Ceci est l'api du jeu O'Pong",
+            "license": {
+                "name": "MIT",
+                "url": "https://spdx.org/licenses/MIT.html"
+            },
+            "contact": {
+                "name": "Sébastien Lampazona",
+                "url": "http://adopteundev.fr",
+                "email": "lampazona.sebastien@gmail.com"
+            }
+        },
+        "servers": [
+            {
+                "url": "http://adopteundev.fr:1331/api"
+            },
+            {
+                "url": "http://localhost:1331/api"
+            }
+        ]
+    },
+    "apis": [
+        "./src/routes/api.js",
+        "./src/models/*.js"
+    ]
+}

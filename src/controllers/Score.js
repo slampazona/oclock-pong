@@ -1,13 +1,21 @@
 import dayjs from 'dayjs';
-import { validationResult } from 'express-validator';
 import { Score } from 'src/models';
 
 export const list = async (req, res, next) => {
     try {
+        let limit = 15;
+        if (req.query.limit){
+            if(Number(req.query.limit) === 0){
+                limit = null;
+            }
+            else {
+                limit = Number(req.query.limit);
+            }
+        }
         const scores = await Score.findAll({
-            limit: 15,
+            limit,
             order: [
-                ['score_date', 'DESC']
+                ['score_date', 'ASC']
             ]
         });
         return res.send({
@@ -20,21 +28,14 @@ export const list = async (req, res, next) => {
 }
 
 export const create = async (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).send({ 
-          success: false,
-          errors: errors.array() 
-        });
-    }
-
-    const score = await Score.create({
-        player_1: req.body.player_1,
-        player_2: req.body.player_2,
-        score_date: req.body.score_date || dayjs()
-    });
-
     try {
+        const score = await Score.create({
+            pseudo: req.body.pseudo,
+            player_1: req.body.player_1,
+            player_2: req.body.player_2,
+            score_date: req.body.score_date || dayjs()
+        });
+
         return res.send({
             success: true,
             data: score,

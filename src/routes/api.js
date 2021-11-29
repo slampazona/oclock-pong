@@ -1,7 +1,8 @@
 import express from 'express';
+import { body, query } from 'express-validator';
 import * as ScoreController from 'src/controllers/Score';
 import { isDayjsDate } from 'src/validators';
-import { body } from 'express-validator';
+import validationResult from 'src/middlewares/validationResult';
 
 const router = express.Router();
 
@@ -13,6 +14,14 @@ const router = express.Router();
  *     tags: ['Score']
  *     produces:
  *       - application/json
+ *     parameters:
+ *     - name: limit
+ *       in: query
+ *       description: La limite à afficher, 15 par défaut, 0 pour no limit
+ *       required: false
+ *       example: 15
+ *       schema:
+ *           type: integer
  *     responses:
  *       200:
  *         description: 'Les scores sont retournés'
@@ -27,7 +36,12 @@ const router = express.Router();
  *                       allOf:
  *                       - $ref: '#/components/schemas/Score'
  */
-router.get('/score', ScoreController.list)
+router.get(
+    '/score',
+    query('limit').optional().isInt({ min: 0, max: 100 }),
+    validationResult,
+    ScoreController.list
+)
 
 /**
 * @swagger
@@ -44,6 +58,11 @@ router.get('/score', ScoreController.list)
 *               schema:
 *                   type: 'object'
 *                   properties:
+*                       pseudo:
+*                           type: 'string'
+*                           description: 'Le pseudo du gagnant'
+*                           required: true
+*                           example: 'MICHEL'
 *                       player_1:
 *                           type: 'integer'
 *                           description: 'Le score du joueur 1'
@@ -77,9 +96,11 @@ router.get('/score', ScoreController.list)
 */
 router.post(
     '/score',
-    body('player_1').isInt({gt: 0}),
-    body('player_2').isInt({gt: 0}),
+    body('pseudo').isString().notEmpty(),
+    body('player_1').isInt({ min: 0 }),
+    body('player_2').isInt({ min: 0 }),
     body('score_date').optional().custom(isDayjsDate('YYYY-MM-DD HH:mm')),
+    validationResult,
     ScoreController.create
 )
 

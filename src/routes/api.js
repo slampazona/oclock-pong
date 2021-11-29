@@ -104,4 +104,10 @@ router.post(
     ScoreController.create
 )
 
+// Récupération d'une 404 pour les routes d'api
+router.use((req, res) => {
+    res.status(404).send({
+        message: 'A bah raté, c\'est une 404, rester sur cette dernière entrainera le sacrifice d\'un chaton ... A toi de voir !'
+    })
+})
 export default router;

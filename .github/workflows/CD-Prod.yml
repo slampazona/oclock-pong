@@ -18,6 +18,10 @@ jobs:
         run: |
           cd front-react
           yarn install
+      - name: Création du fichier .env.production
+        run: |
+          cd front-react
+          echo '${{ secrets.FRONT_PRODUCTION_ENV}}' > .env.production
       - name: Build du front
         run: |
           cd front-react

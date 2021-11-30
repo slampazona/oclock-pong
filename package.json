@@ -12,7 +12,8 @@
     "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --detectOpenHandles",
     "test:watch": "cross-env NODE_ENV=test jest --testTimeout=10000 --watchAll --detectOpenHandles",
     "lint": "eslint --fix '{src,__test__}/**/*.js'",
-    "pretty": "prettier --write '{src,__test__}/**/*.js'"
+    "pretty": "prettier --write '{src,__test__}/**/*.js'",
+    "prepare": "husky install"
   },
   "pre-commit": [
     "lint",
@@ -58,10 +59,10 @@
     "eslint": "^8.3.0",
     "eslint-plugin-jest": "^25.3.0",
     "eslint-plugin-react": "^7.27.1",
+    "husky": "^7.0.4",
     "jest": "^27.4.1",
     "lint": "^0.7.0",
     "nodemon": "^2.0.15",
-    "pre-commit": "^1.2.2",
     "supertest": "^6.1.6"
   }
 }

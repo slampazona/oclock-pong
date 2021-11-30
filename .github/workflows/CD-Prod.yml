@@ -22,10 +22,15 @@ jobs:
         run: |
           cd front-react
           echo '${{ secrets.FRONT_PRODUCTION_ENV}}' > .env.production
+      - name: Lancement des tests coté front
+        run: |
+          cd front-react
+          yarn test
       - name: Build du front
         run: |
           cd front-react
           yarn build
+      - name: Build du back
       - name: Mise à jour des dépendances du back
         run: |
           yarn install

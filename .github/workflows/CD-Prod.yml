@@ -1,4 +1,4 @@
-name: Prod - CD
+name: Prod - CD/CI
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          submodules: 'recursive'
+          submodules: "recursive"
       - name: Mise à jour du submodule
         run: git submodule update --init
       - name: Mise à jour des dépendances du front
@@ -35,5 +35,10 @@ jobs:
       - name: Build du back
         run: |
           yarn build
+      - name: Lancement des tests coté back
+        run: |
+          echo '${{ secrets.TEST_ENV}}' > .env.test
+          sudo systemctl stop pong_game.service
+          yarn test
       - name: Restart du service
-        run: sudo systemctl restart pong_game.service
+        run: sudo systemctl start pong_game.service

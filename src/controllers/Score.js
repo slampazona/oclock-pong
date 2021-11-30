@@ -1,8 +1,5 @@
 import dayjs from 'dayjs';
 import { Score } from 'src/models';
-import { syncAndMigrateDBForTests } from 'src/utils/migrateDB';
-
-beforeEach(() => syncAndMigrateDBForTests);
 
 export const getScoreLimit = (queryLimit = null) => {
     let limit = 15;

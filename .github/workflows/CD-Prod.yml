@@ -32,13 +32,14 @@ jobs:
       - name: Création du fichier .env.production
         run: |
           echo '${{ secrets.PRODUCTION_ENV}}' > .env.production
+      - name: Création du fichier .env.test
+        run: |
+          echo '${{ secrets.TEST_ENV}}' > .env.test
+      - name: Lancement des tests coté back
+        run: |
+          yarn test
       - name: Build du back
         run: |
           yarn build
-      - name: Lancement des tests coté back
-        run: |
-          echo '${{ secrets.TEST_ENV}}' > .env.test
-          sudo systemctl stop pong_game.service
-          yarn test
       - name: Restart du service
-        run: sudo systemctl start pong_game.service
+        run: sudo systemctl restart pong_game.service

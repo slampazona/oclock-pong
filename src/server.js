@@ -2,13 +2,12 @@
  * Package Import
  */
 import 'dotenv-flow/config';
-// import des models pour la synchro de la BDD, ne pas toucher même si pas utilisé
-import models from './models';
+
+import { testAndSyncDB } from './utils/migrateDB';
 import logger from 'src/utils/logger';
 /*
  * Local Import
  */
-import bdd from './bdd';
 import app from './index';
 /*
  * Server • Node.js
@@ -22,20 +21,7 @@ if (!port) {
 
 async function initServer() {
     try {
-        try {
-            await bdd.authenticate();
-            logger.log('sql', '✔️ BDD connectée avec succès');
-        } catch (error) {
-            logger.log('sql', '❌ Erreur de connexion à la BDD');
-            throw error;
-        }
-        try {
-            await bdd.sync();
-            logger.log('sql', '✔️ Modèles synchronisés en BDD avec succès');
-        } catch (error) {
-            logger.log('sql', '❌ Erreur de synchronisation des modèles à la BDD');
-            throw error;
-        }
+        await testAndSyncDB();
         return app.listen(port, () => {
             logger.info('🤖  Node.js is running :');
             logger.info(`→ PORT *:${port}`);

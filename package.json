@@ -9,10 +9,10 @@
     "dev": "cross-env nodemon src/server.js --exec babel-node",
     "start": "cross-env NODE_ENV=production node dist/server.js",
     "build": "babel src -d dist --ignore ./src/public --copy-files",
-    "test": "cross-env NODE_PATH=./ mocha --exit --require tests/.setup.js \"tests/{,!(demo)/**}/*.test.js\"",
-    "test:watch": "cross-env NODE_PATH=./ mocha --watch --require tests/.setup.js \"tests/{,!(demo)/**}/*.test.js\"",
-    "lint": "eslint --fix '{src,tests}/**/*.js'",
-    "pretty": "prettier --write '{src,tests}/**/*.js'"
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --detectOpenHandles",
+    "test:watch": "cross-env NODE_ENV=test jest --testTimeout=10000 --watchAll --detectOpenHandles",
+    "lint": "eslint --fix '{src,__test__}/**/*.js'",
+    "pretty": "prettier --write '{src,__test__}/**/*.js'"
   },
   "husky": {
     "hooks": {
@@ -55,6 +55,8 @@
     "@babel/runtime": "^7.8.4",
     "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^4.0.0",
-    "nodemon": "^2.0.15"
+    "jest": "^27.4.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   }
 }

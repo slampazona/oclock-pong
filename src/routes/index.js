@@ -8,7 +8,7 @@ const router = express.Router();
 router.use('/api', apiRoutes);
 
 router.use((_, res) => {
-    // Dans tous les cas, si on a pas trouvé route à sa chaussette, on redirige vers l'app en react
+    // Dans tous les cas, si on a pas trouvé route à son pied, on redirige vers l'app en react
     // c'est elle qui gèrera la 404
     res.sendFile(path.join(__dirname, '..', '..', 'front-react', 'dist', 'index.html'))
 })

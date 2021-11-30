@@ -9,6 +9,7 @@ import logger from 'src/utils/logger';
  *
  * Donne l'erreur en détail, peut importe l'erreur
  */
+/* istanbul ignore next */
 export const developmentErrors = (err, req, res, next) => {
     const errStack = err.stack || '';
 
@@ -30,12 +31,13 @@ export const developmentErrors = (err, req, res, next) => {
  *
  * Donne l'erreur mais sans le détail, peut importe l'erreur
  */
+/* istanbul ignore next */
 export const productionErrors = (err, req, res, next) => {
     let errorMessage = err.message;
-    if (err instanceof BaseError){
+    if (err instanceof BaseError) {
         errorMessage = "Une erreur est survenue avec la base de données, merci de réessayer plus tard ... Ou pas !."
     }
-    else if (err.classname === 'Error'){
+    else if (err.classname === 'Error') {
         errorMessage = 'Une erreur est survenue, merci de réessayer plus tard ... Ou pas !.'
     }
     const errorDetails = {

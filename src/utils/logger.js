@@ -1,6 +1,6 @@
 import winston from 'winston';
 
-const logLevel = 'debug';
+let logLevel = process.env.LOG_LEVEL || 'error';
 const logLevels = {
     levels: {
         error: 0,

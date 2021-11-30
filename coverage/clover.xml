@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1638282238441" clover="3.2.0">
+  <project timestamp="1638282238441" name="All files">
+    <metrics statements="54" coveredstatements="51" conditionals="19" coveredconditionals="13" methods="14" coveredmethods="12" elements="87" coveredelements="76" complexity="0" loc="54" ncloc="54" packages="8" files="13" classes="13"/>
+    <package name="src">
+      <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <file name="index.js" path="/home/slampazona/nodeProjects/oclock-pong/src/index.js">
+        <metrics statements="9" coveredstatements="9" conditionals="2" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="42" count="2" type="cond" truecount="1" falsecount="1"/>
+      </file>
+    </package>
+    <package name="src.bdd">
+      <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <file name="index.js" path="/home/slampazona/nodeProjects/oclock-pong/src/bdd/index.js">
+        <metrics statements="3" coveredstatements="3" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
+        <line num="32" count="61" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.controllers">
+      <metrics statements="16" coveredstatements="15" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+      <file name="Score.js" path="/home/slampazona/nodeProjects/oclock-pong/src/controllers/Score.js">
+        <metrics statements="16" coveredstatements="15" conditionals="6" coveredconditionals="5" methods="3" coveredmethods="3"/>
+        <line num="5" count="10" type="stmt"/>
+        <line num="7" count="3" type="stmt"/>
+        <line num="8" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="33" count="3" type="stmt"/>
+        <line num="34" count="3" type="stmt"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.middlewares">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="errorHandlers.js" path="/home/slampazona/nodeProjects/oclock-pong/src/middlewares/errorHandlers.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="validationResult.js" path="/home/slampazona/nodeProjects/oclock-pong/src/middlewares/validationResult.js">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.models">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="Score.js" path="/home/slampazona/nodeProjects/oclock-pong/src/models/Score.js">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="48" count="26" type="stmt"/>
+        <line num="63" count="4" type="stmt"/>
+      </file>
+      <file name="index.js" path="/home/slampazona/nodeProjects/oclock-pong/src/models/index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.routes">
+      <metrics statements="9" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <file name="api.js" path="/home/slampazona/nodeProjects/oclock-pong/src/routes/api.js">
+        <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="97" count="2" type="stmt"/>
+        <line num="108" count="2" type="stmt"/>
+        <line num="109" count="0" type="stmt"/>
+      </file>
+      <file name="index.js" path="/home/slampazona/nodeProjects/oclock-pong/src/routes/index.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.utils">
+      <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="2"/>
+      <file name="index.js" path="/home/slampazona/nodeProjects/oclock-pong/src/utils/index.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="48" type="stmt"/>
+      </file>
+      <file name="logger.js" path="/home/slampazona/nodeProjects/oclock-pong/src/utils/logger.js">
+        <metrics statements="8" coveredstatements="7" conditionals="4" coveredconditionals="2" methods="2" coveredmethods="1"/>
+        <line num="3" count="3" type="cond" truecount="1" falsecount="1"/>
+        <line num="4" count="3" type="stmt"/>
+        <line num="23" count="3" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="35" count="61" type="stmt"/>
+        <line num="36" count="61" type="stmt"/>
+        <line num="37" count="61" type="cond" truecount="1" falsecount="1"/>
+        <line num="45" count="0" type="stmt"/>
+      </file>
+      <file name="migrateDB.js" path="/home/slampazona/nodeProjects/oclock-pong/src/utils/migrateDB.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="src.validators">
+      <metrics statements="1" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="index.js" path="/home/slampazona/nodeProjects/oclock-pong/src/validators/index.js">
+        <metrics statements="1" coveredstatements="1" conditionals="1" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="6" type="cond" truecount="0" falsecount="1"/>
+      </file>
+    </package>
+  </project>
+</coverage>

@@ -1,0 +1,13 @@
+{
+    "modulePaths": [
+        "./"
+    ],
+    "roots": [
+        "<rootDir>/src",
+        "<rootDir>/__tests__"
+    ],
+    "globalSetup": "<rootDir>/jest.setup.js",
+    "coveragePathIgnorePatterns": [
+        "/node_modules/"
+    ]
+}

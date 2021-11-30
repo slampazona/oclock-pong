@@ -1,17 +1,24 @@
 import dayjs from 'dayjs';
 import { Score } from 'src/models';
+import { syncAndMigrateDBForTests } from 'src/utils/migrateDB';
 
+beforeEach(() => syncAndMigrateDBForTests);
+
+export const getScoreLimit = (queryLimit = null) => {
+    let limit = 15;
+    if (queryLimit || queryLimit === 0) {
+        if (Number(queryLimit) === 0) {
+            limit = null;
+        }
+        else if(Number(queryLimit) > 0) {
+            limit = Number(queryLimit);
+        }
+    }
+    return limit;
+}
 export const list = async (req, res, next) => {
     try {
-        let limit = 15;
-        if (req.query.limit){
-            if(Number(req.query.limit) === 0){
-                limit = null;
-            }
-            else {
-                limit = Number(req.query.limit);
-            }
-        }
+        let limit = getScoreLimit(req?.query?.limit);
         const scores = await Score.findAll({
             limit,
             order: [
@@ -36,7 +43,7 @@ export const create = async (req, res, next) => {
             score_date: req.body.score_date || dayjs()
         });
 
-        return res.send({
+        return res.status(201).send({
             success: true,
             data: score,
         });

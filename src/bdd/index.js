@@ -18,6 +18,7 @@ const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
   dialect: 'mariadb',
   dialectOptions: {
     useUTC: false,
+    multipleStatements: process.env.NODE_ENV === 'test',
     ssl:
       DB_SSL === 'true' || DB_SSL === true
         ? {

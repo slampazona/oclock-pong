@@ -14,11 +14,10 @@
     "lint": "eslint --fix '{src,__test__}/**/*.js'",
     "pretty": "prettier --write '{src,__test__}/**/*.js'"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged && yarn test"
-    }
-  },
+  "pre-commit": [
+    "lint",
+    "yarn test"
+  ],
   "lint-staged": {
     "*.js": [
       "prettier --write",
@@ -45,6 +44,7 @@
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
+    "@babel/eslint-parser": "^7.16.3",
     "@babel/node": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.8.3",
@@ -55,8 +55,13 @@
     "@babel/runtime": "^7.8.4",
     "babel-eslint": "^10.0.1",
     "babel-plugin-module-resolver": "^4.0.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-jest": "^25.3.0",
+    "eslint-plugin-react": "^7.27.1",
     "jest": "^27.4.1",
+    "lint": "^0.7.0",
     "nodemon": "^2.0.15",
+    "pre-commit": "^1.2.2",
     "supertest": "^6.1.6"
   }
 }

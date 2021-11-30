@@ -1,8 +1,13 @@
 {
+  "plugins": [
+    "jest",
+    "react"
+  ],
   "env": {
     "jest/globals": true
   },
   "rules": {
     "no-unused-expressions": "off"
-  }
+  },
+  "parser": "@babel/eslint-parser"
 }

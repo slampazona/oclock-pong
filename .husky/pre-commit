@@ -2,4 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn lint
+cd front-react && yarn build
+cd ../
 yarn test

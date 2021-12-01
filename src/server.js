@@ -14,7 +14,7 @@ import app from './index';
  */
 const port = process.env.SERVER_PORT;
 if (!port) {
-    logger.warning(
+    logger.warn(
         "ヽ༼ ಠ益ಠ ༽ﾉ  Il y a un problème avec la variable d'env SERVER_PORT",
     );
 }

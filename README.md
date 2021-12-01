@@ -2,7 +2,7 @@
 
 > :warning: **N'oublie pas d'aller faire un tour sur le [wiki](https://github.com/slampazona/oclock-pong/wiki), il y a pas mal d'informations importantes sur le fonctionnement global. Comme par exemple, l'adresse du swagger, ou encore l'explication du déploiement !**
 
-![Screenshot](../.assets/screenshot.png)
+![Screenshot](./.assets/screenshot.png)
 
 ## :sunny: Pré-requis
 
